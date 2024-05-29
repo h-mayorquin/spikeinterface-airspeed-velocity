@@ -8,10 +8,13 @@
     "branches": ["main"],
     "build_command": [
         "python -m pip install build",
-        "python -m build",
-        "python -m pip wheel -w {build_cache_dir} {build_dir}"
+        "python -m build --wheel --outdir {build_cache_dir}"
     ],
-    "pythons": ["3.8", "3.9", "3.10", "3.11", "3.12"], 
+    "install_command": [
+        "in-dir={env_dir} python -m pip install {wheel_file}"
+    ],
+
+    "pythons": ["3.12"], 
     "benchmarks": [
         "benchmarks/*.py"
     ]
