@@ -3,6 +3,13 @@
     "project": "spikeinterface",
     "project_url": "https://spikeinterface.readthedocs.io/en/latest/", 
     "repo": "https://github.com/SpikeInterface/spikeinterface.git",
+    "dvcs": "git",
     "environment_type": "conda",
-    "branches": ["main"]
+    "branches": ["main"],
+    "build_command": [
+        "python -m pip install build",
+        "python -m build",
+        "python -mpip wheel -w {build_cache_dir} {build_dir}"
+    ],
+    "pythons": ["3.12"] 
 }
